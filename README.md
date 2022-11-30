@@ -42,6 +42,8 @@ direction like this:
                     ...
                1981/
                ...
+               
+    About WGAN : in this project , WGAN get more parameters in MLP.
 ~~~
 
 ### train GAN
@@ -72,7 +74,7 @@ direction like this:
 
 ![plot](./sample_imgs/GAN.png)
 
-### LOCK_GAN  and LSTM train_out:
+### LOCK_GAN  and LSTM train outputs:
 
 ![plot](./sample_imgs/Lstm.png)
 
