@@ -72,7 +72,7 @@ direction like this:
 
 ![plot](./sample_imgs/GAN.png)
 
-### LOCK_GAN LSTM:
+### LOCK_GAN  and LSTM train_out:
 
 ![plot](./sample_imgs/Lstm.png)
 
