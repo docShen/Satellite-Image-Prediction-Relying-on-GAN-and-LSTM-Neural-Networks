@@ -46,8 +46,8 @@ direction like this:
 
 ### train GAN
 ~~~
-run : python train_GAN.py
-result will be place in ./images and ./save_model
+ run : python train_GAN.py
+ result will be place in ./images and ./save_model
 ~~~
 
 
@@ -70,4 +70,4 @@ result will be place in ./images and ./save_model
 
 ### Single WGAN:
 
-![plot](./sample_imgs/single_GAN_out.png)
+![plot](./sample_imgs/GAN.png)

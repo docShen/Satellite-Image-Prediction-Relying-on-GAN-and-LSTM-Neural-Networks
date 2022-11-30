@@ -17,7 +17,7 @@ class Dataset_m(Dataset):
     def __init__(self, root, transform):
         self.root = root
         self.transform = transform
-        self.data_file_list = sorted(glob.glob(f'{self.root}/1985/*'))
+        self.data_file_list = sorted(glob.glob(f'{self.root}/{opt.year}/*'))
         pass
     def __getitem__(self, index):
         cur_len = 0
@@ -82,6 +82,9 @@ if __name__ == '__main__':
 
             target_emb = LSTM(imgs)
             target_emb = target_emb[:,-1,:]
+
+            G.eval()
+
             gen_img = G(target_emb)
 
             loss = critiron(gen_img.squeeze(1),target)

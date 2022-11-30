@@ -21,7 +21,9 @@ class Generator(nn.Module):
             *block(128, 256),
             *block(256, 512),
             *block(512, 1024),
-            nn.Linear(1024, int(np.prod(img_shape))),
+            *block(1024, 2048),
+            *block(2048, 4096),
+            nn.Linear(4096, int(np.prod(img_shape))),
             nn.Tanh()
         )
 
@@ -38,7 +40,11 @@ class Discriminator(nn.Module):
         self.model = nn.Sequential(
             nn.Linear(int(np.prod(img_shape)), 512),#np.prod(img_shape)连乘操作，长*宽*深度
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Linear(512, 256),
+            nn.Linear(512, 1024),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Linear(1024, 2048),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Linear(2048, 256),
             nn.LeakyReLU(0.2, inplace=True),
             nn.Linear(256, 1),#改进1、判别器最后一层去掉sigmoid。sigmoid函数容易出现梯度消失的情况。
         )

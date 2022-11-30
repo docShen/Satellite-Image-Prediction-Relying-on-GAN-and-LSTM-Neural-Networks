@@ -112,13 +112,14 @@ if __name__ == '__main__':
 
                 loss_G.backward()
                 optimizer_G.step()#只更新 generator 的参数
+                if iteration & 100 == 0:
 
-                print(
-                    "[Epoch %d/%d] [iteration %d] [D loss: %f] [G loss: %f]"
-                    % (epoch, opt.epochs_GAN, iteration, loss_D.item(), loss_G.item())
-                )
+                    print(
+                        "[Epoch %d/%d] [iteration %d] [D loss: %f] [G loss: %f]"
+                        % (epoch, opt.epochs_GAN, iteration, loss_D.item(), loss_G.item())
+                    )
 
-        if (epoch+1 ) % 200 == 0 :
+        if (epoch+1 ) % 150 == 0 :
             save_model_path = './saved_model'
             os.makedirs(save_model_path,exist_ok=True)
             torch.save(generator.state_dict(), save_model_path + f'/my_G{epoch+1}.pth')
