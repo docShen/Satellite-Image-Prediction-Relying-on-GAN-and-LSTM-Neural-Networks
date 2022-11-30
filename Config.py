@@ -11,9 +11,9 @@ Config = {
 
     'batch_size_GAN' : 64, #GAN的batch size
     'epochs_GAN': 10000,   # GAN训练的轮数
-    'lr_GAN': 0.0001,       # GAN的学习率
+    'lr_GAN': 0.0001,       # GAN的学习率（不要随便改）
     'latent_dim' : 32 ,    # 隐变量的维度
-    'n_critic': 5,          # 训练D的次数
+    'n_critic': 5,          # 训练D的次数 （不要随便改）
     'clip_value':0.01,      # 裁减D的参数（不要随便改）
 
     'load_G_name' : 'my_G3900.pth',  # 加载G的模型

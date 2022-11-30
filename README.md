@@ -71,3 +71,8 @@ direction like this:
 ### Single WGAN:
 
 ![plot](./sample_imgs/GAN.png)
+
+### LOCK_GAN LSTM:
+
+![plot](./sample_imgs/Lstm.png)
+
